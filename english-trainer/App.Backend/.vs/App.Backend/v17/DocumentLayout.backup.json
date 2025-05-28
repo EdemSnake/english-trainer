@@ -1,0 +1,316 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eden\\source\\repos\\App.Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\entitytypeconfiguration\\phonemescoreconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\entitytypeconfiguration\\phonemescoreconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\entitytypeconfiguration\\wordscoreconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\entitytypeconfiguration\\wordscoreconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\entitytypeconfiguration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\entitytypeconfiguration\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\entitytypeconfiguration\\textpassageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\entitytypeconfiguration\\textpassageconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\entitytypeconfiguration\\assessmentresultconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\entitytypeconfiguration\\assessmentresultconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\app.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\app.persistence.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.webapi\\app.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|solutionrelative:app.webapi\\app.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|solutionrelative:app.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.persistence\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80E688A9-A1B3-419C-8F3D-158374B28CBE}|App.Persistence\\App.Persistence.csproj|solutionrelative:app.persistence\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC2A9746-59D7-4CF0-83C4-C0EDE8E6EEFB}|App.Application\\App.Application.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.application\\interfaces\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC2A9746-59D7-4CF0-83C4-C0EDE8E6EEFB}|App.Application\\App.Application.csproj|solutionrelative:app.application\\interfaces\\iappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BC8EDD4-F14E-458C-BF6B-3CCF70D7E697}|App.WebApi\\App.WebApi.csproj|solutionrelative:app.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC2A9746-59D7-4CF0-83C4-C0EDE8E6EEFB}|App.Application\\App.Application.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.application\\app.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CC2A9746-59D7-4CF0-83C4-C0EDE8E6EEFB}|App.Application\\App.Application.csproj|solutionrelative:app.application\\app.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.domain\\phonemescore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|solutionrelative:app.domain\\phonemescore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.domain\\assessmentresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|solutionrelative:app.domain\\assessmentresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|solutionrelative:app.domain\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.domain\\wordscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|solutionrelative:app.domain\\wordscore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|c:\\users\\eden\\source\\repos\\app.backend\\app.domain\\textpassage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF8F24-2A5A-442B-94A3-77C0AD2CCF05}|App.Domain\\App.Domain.csproj|solutionrelative:app.domain\\textpassage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "App.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\Program.cs",
+              "RelativeToolTip": "App.WebApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T08:30:30.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "App.Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswBEAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T20:27:59.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.Persistence.csproj",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\App.Persistence.csproj",
+              "RelativeDocumentMoniker": "App.Persistence\\App.Persistence.csproj",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\App.Persistence.csproj",
+              "RelativeToolTip": "App.Persistence\\App.Persistence.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-25T12:07:57.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WordScoreConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\WordScoreConfiguration.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\EntityTypeConfiguration\\WordScoreConfiguration.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\WordScoreConfiguration.cs",
+              "RelativeToolTip": "App.Persistence\\EntityTypeConfiguration\\WordScoreConfiguration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:45:41.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\EntityTypeConfiguration\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\UserConfiguration.cs",
+              "RelativeToolTip": "App.Persistence\\EntityTypeConfiguration\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:45:10.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PhonemeScoreConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\PhonemeScoreConfiguration.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\EntityTypeConfiguration\\PhonemeScoreConfiguration.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\PhonemeScoreConfiguration.cs",
+              "RelativeToolTip": "App.Persistence\\EntityTypeConfiguration\\PhonemeScoreConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:45:48.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\DbInitializer.cs",
+              "RelativeToolTip": "App.Persistence\\DbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T07:34:13.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Application\\Interfaces\\IAppDbContext.cs",
+              "RelativeDocumentMoniker": "App.Application\\Interfaces\\IAppDbContext.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Application\\Interfaces\\IAppDbContext.cs",
+              "RelativeToolTip": "App.Application\\Interfaces\\IAppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T19:06:30.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "App.WebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\appsettings.json",
+              "RelativeToolTip": "App.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-26T08:15:09.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AssessmentResultConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\AssessmentResultConfiguration.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\EntityTypeConfiguration\\AssessmentResultConfiguration.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\AssessmentResultConfiguration.cs",
+              "RelativeToolTip": "App.Persistence\\EntityTypeConfiguration\\AssessmentResultConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:45:34.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TextPassageConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\TextPassageConfiguration.cs",
+              "RelativeDocumentMoniker": "App.Persistence\\EntityTypeConfiguration\\TextPassageConfiguration.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Persistence\\EntityTypeConfiguration\\TextPassageConfiguration.cs",
+              "RelativeToolTip": "App.Persistence\\EntityTypeConfiguration\\TextPassageConfiguration.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T16:45:24.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.WebApi.csproj",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\App.WebApi.csproj",
+              "RelativeDocumentMoniker": "App.WebApi\\App.WebApi.csproj",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.WebApi\\App.WebApi.csproj",
+              "RelativeToolTip": "App.WebApi\\App.WebApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-26T09:05:33.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Application\\App.Application.csproj",
+              "RelativeDocumentMoniker": "App.Application\\App.Application.csproj",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Application\\App.Application.csproj",
+              "RelativeToolTip": "App.Application\\App.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-25T19:05:56.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PhonemeScore.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\PhonemeScore.cs",
+              "RelativeDocumentMoniker": "App.Domain\\PhonemeScore.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\PhonemeScore.cs",
+              "RelativeToolTip": "App.Domain\\PhonemeScore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:13:53.773Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AssessmentResult.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\AssessmentResult.cs",
+              "RelativeDocumentMoniker": "App.Domain\\AssessmentResult.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\AssessmentResult.cs",
+              "RelativeToolTip": "App.Domain\\AssessmentResult.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:14:13.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\User.cs",
+              "RelativeDocumentMoniker": "App.Domain\\User.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\User.cs",
+              "RelativeToolTip": "App.Domain\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T12:23:42.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WordScore.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\WordScore.cs",
+              "RelativeDocumentMoniker": "App.Domain\\WordScore.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\WordScore.cs",
+              "RelativeToolTip": "App.Domain\\WordScore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:13:25.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TextPassage.cs",
+              "DocumentMoniker": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\TextPassage.cs",
+              "RelativeDocumentMoniker": "App.Domain\\TextPassage.cs",
+              "ToolTip": "C:\\Users\\eden\\source\\repos\\App.Backend\\App.Domain\\TextPassage.cs",
+              "RelativeToolTip": "App.Domain\\TextPassage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-25T13:14:25.614Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
