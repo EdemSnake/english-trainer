@@ -1,3 +1,4 @@
+using App.Application;
 using App.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // 2. Register AppDbContext to use PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
+builder.Services.AddApplication();
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -22,8 +26,16 @@ using (var scope = app.Services.CreateScope())
     DbInitializer.Initialize(context);
 }
 
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
 // 4. Define a simple HTTP GET endpoint
 app.MapGet("/", () => "Hello World!");
+app.MapControllers();
 
 // 5. Start the web application
 app.Run();
