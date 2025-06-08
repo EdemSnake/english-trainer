@@ -1,26 +1,45 @@
 using App.Application.Dtos;
+using App.Application.Features.Users.Commands.CreateUser;
+using App.Application.Features.Users.Commands.DeleteUser;
+using App.Application.Features.Users.Commands.UpdateUser;
 using App.Application.Features.Users.Queries.GetUsers;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.WebApi.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController
     {
-        private readonly IMediator _mediator;
-
-        public UsersController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserDto>>> GetUsers()
         {
-            var users = await _mediator.Send(new GetUsersQuery());
-            return Ok(users);
+            return Ok(await Mediator.Send(new GetUsersQuery()));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Guid>> Create(CreateUserCommand command)
+        {
+            return await Mediator.Send(command);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> Update(Guid id, UpdateUserCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest();
+            }
+
+            await Mediator.Send(command);
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            await Mediator.Send(new DeleteUserCommand { Id = id });
+
+            return NoContent();
         }
     }
 }

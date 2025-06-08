@@ -1,4 +1,5 @@
 using App.Application;
+using App.Application.Interfaces;
 using App.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,9 +11,22 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 // 2. Register AppDbContext to use PostgreSQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
+
+builder.Services.AddScoped<IAppDbContext, AppDbContext>();
+
 builder.Services.AddApplication();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+    });
+});
 
 var app = builder.Build();
 
@@ -33,8 +47,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
+
 // 4. Define a simple HTTP GET endpoint
-app.MapGet("/", () => "Hello World!");
 app.MapControllers();
 
 // 5. Start the web application

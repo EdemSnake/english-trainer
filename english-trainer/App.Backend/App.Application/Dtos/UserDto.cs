@@ -6,6 +6,6 @@ namespace App.Application.Dtos
     public class UserDto : IMapFrom<User>
     {
         public Guid Id { get; set; }
-        public string Username { get; set; }
+        public string? Username { get; set; }
     }
 }
