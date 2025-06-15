@@ -1,6 +1,7 @@
 using App.Application;
 using App.Application.Interfaces;
 using App.Persistence;
+using App.WebApi.Middleware;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,6 +48,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 app.UseCors("AllowAll");
 
 // 4. Define a simple HTTP GET endpoint

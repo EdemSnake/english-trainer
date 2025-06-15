@@ -1,4 +1,6 @@
+using App.Application.Common.Exceptions;
 using App.Application.Interfaces;
+using App.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +21,7 @@ namespace App.Application.Features.TextPassages.Commands.UpdateTextPassage
 
             if (textPassage == null)
             {
-                // Or throw a custom not found exception
-                return Unit.Value;
+                throw new NotFoundException(nameof(TextPassage), request.Id);
             }
 
             textPassage.Content = request.Content ?? textPassage.Content;
