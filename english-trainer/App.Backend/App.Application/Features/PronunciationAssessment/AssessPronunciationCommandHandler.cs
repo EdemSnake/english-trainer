@@ -35,10 +35,13 @@ namespace App.Application.Features.PronunciationAssessment
 
             var assessmentResult = new AssessmentResult
             {
+                UserId = request.UserId,
+                TextPassageId = request.TextPassageId,
                 AccuracyScore = assessmentResultData.NBest[0].AccuracyScore,
                 PronunciationScore = assessmentResultData.NBest[0].PronunciationScore,
                 CompletenessScore = assessmentResultData.NBest[0].CompletenessScore,
-                FluencyScore = assessmentResultData.NBest[0].FluencyScore
+                FluencyScore = assessmentResultData.NBest[0].FluencyScore,
+                FullResultJson = jsonResult
             };
 
             _context.AssessmentResults.Add(assessmentResult);

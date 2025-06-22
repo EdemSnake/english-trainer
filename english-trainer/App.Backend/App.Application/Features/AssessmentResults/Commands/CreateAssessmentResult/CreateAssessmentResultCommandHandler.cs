@@ -20,8 +20,11 @@ namespace App.Application.Features.AssessmentResults.Commands.CreateAssessmentRe
                 Id = Guid.NewGuid(),
                 UserId = request.UserId,
                 TextPassageId = request.TextPassageId,
-                AccuracyScore = request.OverallAccuracy,
-                FluencyScore = request.WordsPerMinute,
+                AccuracyScore = request.AccuracyScore,
+                FluencyScore = request.FluencyScore,
+                CompletenessScore = request.CompletenessScore,
+                PronunciationScore = request.PronunciationScore,
+                ProsodyScore = request.ProsodyScore,
                 AssessedAt = DateTime.UtcNow
             };
 

@@ -1,12 +1,13 @@
-using App.Application.Dtos;
+using System.Collections.Generic;
 using App.Application.Interfaces;
+using App.Application.Dtos;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace App.Application.Features.TextPassages.Queries.GetTextPassages
 {
-    public class GetTextPassagesQueryHandler : IRequestHandler<GetTextPassagesQuery, IEnumerable<TextPassageDto>>
+    public class GetTextPassagesQueryHandler : IRequestHandler<GetTextPassagesQuery, TextPassagesVm>
     {
         private readonly IAppDbContext _context;
         private readonly IMapper _mapper;
@@ -17,11 +18,11 @@ namespace App.Application.Features.TextPassages.Queries.GetTextPassages
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<TextPassageDto>> Handle(GetTextPassagesQuery request, CancellationToken cancellationToken)
+        public async Task<TextPassagesVm> Handle(GetTextPassagesQuery request, CancellationToken cancellationToken)
         {
             var textPassages = await _context.TextPassages.ToListAsync(cancellationToken);
-            var textPassageDtos = _mapper.Map<IEnumerable<TextPassageDto>>(textPassages);
-            return textPassageDtos;
+            var textPassageDtos = _mapper.Map<IList<TextPassageDto>>(textPassages);
+            return new TextPassagesVm { TextPassages = textPassageDtos };
         }
     }
 }

@@ -10,7 +10,7 @@ namespace App.WebApi.Controllers
     public class AssessmentResultsController : BaseApiController
     {
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AssessmentResultDto>>> GetAssessmentResults()
+        public async Task<ActionResult<AssessmentResultsVm>> GetAssessmentResults()
         {
             return Ok(await Mediator.Send(new GetAssessmentResultsQuery()));
         }

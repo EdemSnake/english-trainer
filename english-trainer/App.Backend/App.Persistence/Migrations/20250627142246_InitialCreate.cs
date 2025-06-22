@@ -51,6 +51,7 @@ namespace App.Persistence.Migrations
                     TextPassageId = table.Column<Guid>(type: "uuid", nullable: false),
                     AccuracyScore = table.Column<float>(type: "real", nullable: false),
                     FluencyScore = table.Column<float>(type: "real", nullable: false),
+                    CompletenessScore = table.Column<float>(type: "real", nullable: false),
                     ProsodyScore = table.Column<float>(type: "real", nullable: false),
                     PronunciationScore = table.Column<float>(type: "real", nullable: false),
                     UserAudioUrl = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),

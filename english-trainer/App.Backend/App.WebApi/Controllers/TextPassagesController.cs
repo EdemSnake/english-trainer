@@ -10,7 +10,7 @@ namespace App.WebApi.Controllers
     public class TextPassagesController : BaseApiController
     {
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TextPassageDto>>> GetTextPassages()
+        public async Task<ActionResult<TextPassagesVm>> GetTextPassages()
         {
             return Ok(await Mediator.Send(new GetTextPassagesQuery()));
         }

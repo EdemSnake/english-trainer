@@ -39,6 +39,9 @@ namespace App.Persistence.Migrations
                     b.Property<float>("FluencyScore")
                         .HasColumnType("real");
 
+                    b.Property<float>("CompletenessScore")
+                        .HasColumnType("real");
+
                     b.Property<string>("FullResultJson")
                         .IsRequired()
                         .HasColumnType("jsonb");
