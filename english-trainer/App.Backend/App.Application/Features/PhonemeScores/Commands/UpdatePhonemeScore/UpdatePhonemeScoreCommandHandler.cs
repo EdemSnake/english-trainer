@@ -1,4 +1,6 @@
 using App.Application.Interfaces;
+using App.Application.Common.Exceptions;
+using App.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +21,7 @@ namespace App.Application.Features.PhonemeScores.Commands.UpdatePhonemeScore
 
             if (phonemeScore == null)
             {
-                // Or throw a custom not found exception
-                return Unit.Value;
+                throw new EntityNotFoundException(nameof(PhonemeScore), request.Id);
             }
 
             phonemeScore.AccuracyScore = request.Accuracy;

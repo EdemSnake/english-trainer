@@ -18,6 +18,7 @@ namespace App.Domain
 
         public float AccuracyScore { get; set; }
         public float FluencyScore { get; set; }
+        public float CompletenessScore { get; set; }
         public float ProsodyScore { get; set; }
         public float PronunciationScore { get; set; }
 

@@ -1,4 +1,6 @@
 using App.Application.Interfaces;
+using App.Application.Common.Exceptions;
+using App.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,8 +21,7 @@ namespace App.Application.Features.Users.Commands.UpdateUser
 
             if (user == null)
             {
-                // Or throw a custom not found exception
-                return Unit.Value;
+                throw new EntityNotFoundException(nameof(User), request.Id);
             }
 
             user.Username = request.Username ?? user.Username;

@@ -26,6 +26,7 @@ namespace App.Persistence.EntityTypeConfiguration
 
             builder.Property(ar => ar.AccuracyScore).IsRequired();
             builder.Property(ar => ar.FluencyScore).IsRequired();
+            builder.Property(ar => ar.CompletenessScore).IsRequired();
             builder.Property(ar => ar.ProsodyScore).IsRequired();
             builder.Property(ar => ar.PronunciationScore).IsRequired();
 

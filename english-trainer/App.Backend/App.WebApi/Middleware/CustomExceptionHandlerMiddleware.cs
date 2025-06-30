@@ -35,7 +35,8 @@ namespace App.WebApi.Middleware
 
             switch (exception)
             {
-                case NotFoundException notFoundException:
+                case NotFoundException:
+                case EntityNotFoundException:
                     code = HttpStatusCode.NotFound;
                     break;
             }

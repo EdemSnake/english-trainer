@@ -1,4 +1,6 @@
 using App.Application.Interfaces;
+using App.Application.Common.Exceptions;
+using App.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,12 +21,14 @@ namespace App.Application.Features.AssessmentResults.Commands.UpdateAssessmentRe
 
             if (assessmentResult == null)
             {
-                // Or throw a custom not found exception
-                return Unit.Value;
+                throw new EntityNotFoundException(nameof(AssessmentResult), request.Id);
             }
 
-            assessmentResult.AccuracyScore = request.OverallAccuracy;
-            assessmentResult.FluencyScore = request.WordsPerMinute;
+            assessmentResult.AccuracyScore = request.AccuracyScore;
+            assessmentResult.FluencyScore = request.FluencyScore;
+            assessmentResult.CompletenessScore = request.CompletenessScore;
+            assessmentResult.PronunciationScore = request.PronunciationScore;
+            assessmentResult.ProsodyScore = request.ProsodyScore;
 
             await _context.SaveChangesAsync(cancellationToken);
 
