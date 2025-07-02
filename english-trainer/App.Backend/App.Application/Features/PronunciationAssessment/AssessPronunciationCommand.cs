@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace App.Application.Features.PronunciationAssessment
 {
-    public class AssessPronunciationCommand : IRequest<Unit>
+    public class AssessPronunciationCommand : IRequest<string>
     {
         public Guid UserId { get; set; }
         public Guid TextPassageId { get; set; }

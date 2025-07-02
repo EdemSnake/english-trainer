@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace App.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250627142246_InitialCreate")]
+    [Migration("20250709170312_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,10 +39,10 @@ namespace App.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("NOW()");
 
-                    b.Property<float>("FluencyScore")
+                    b.Property<float>("CompletenessScore")
                         .HasColumnType("real");
 
-                    b.Property<float>("CompletenessScore")
+                    b.Property<float>("FluencyScore")
                         .HasColumnType("real");
 
                     b.Property<string>("FullResultJson")

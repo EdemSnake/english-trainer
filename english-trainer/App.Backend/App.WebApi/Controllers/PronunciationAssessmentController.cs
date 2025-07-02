@@ -17,10 +17,10 @@ namespace App.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AssessPronunciation([FromForm] AssessPronunciationCommand command)
+        public async Task<ActionResult<string>> AssessPronunciation([FromForm] AssessPronunciationCommand command)
         {
-            await _mediator.Send(command);
-            return Ok();
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
     }
 }

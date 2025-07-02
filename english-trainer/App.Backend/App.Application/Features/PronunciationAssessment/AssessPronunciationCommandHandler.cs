@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace App.Application.Features.PronunciationAssessment
 {
-    public class AssessPronunciationCommandHandler : IRequestHandler<AssessPronunciationCommand, Unit>
+    public class AssessPronunciationCommandHandler : IRequestHandler<AssessPronunciationCommand, string>
     {
         private readonly IPronunciationAssessmentService _pronunciationAssessmentService;
         private readonly IAppDbContext _context;
@@ -20,7 +20,7 @@ namespace App.Application.Features.PronunciationAssessment
             _context = context;
         }
 
-        public async Task<Unit> Handle(AssessPronunciationCommand request, CancellationToken cancellationToken)
+        public async Task<string> Handle(AssessPronunciationCommand request, CancellationToken cancellationToken)
         {
             byte[] audioData;
             using (var memoryStream = new MemoryStream())
@@ -31,49 +31,8 @@ namespace App.Application.Features.PronunciationAssessment
 
             var jsonResult = await _pronunciationAssessmentService.AssessPronunciationAsync(audioData, request.ReferenceText);
 
-            var assessmentResultData = JsonConvert.DeserializeObject<dynamic>(jsonResult);
-
-            var assessmentResult = new AssessmentResult
-            {
-                UserId = request.UserId,
-                TextPassageId = request.TextPassageId,
-                AccuracyScore = assessmentResultData.NBest[0].AccuracyScore,
-                PronunciationScore = assessmentResultData.NBest[0].PronunciationScore,
-                CompletenessScore = assessmentResultData.NBest[0].CompletenessScore,
-                FluencyScore = assessmentResultData.NBest[0].FluencyScore,
-                FullResultJson = jsonResult
-            };
-
-            _context.AssessmentResults.Add(assessmentResult);
-            await _context.SaveChangesAsync(cancellationToken);
-
-            foreach (var word in assessmentResultData.NBest[0].Words)
-            {
-                var wordScore = new WordScore
-                {
-                    Word = word.Word,
-                    AccuracyScore = word.AccuracyScore,
-                    AssessmentResultId = assessmentResult.Id
-                };
-
-                _context.WordScores.Add(wordScore);
-                await _context.SaveChangesAsync(cancellationToken);
-
-                foreach (var phoneme in word.Phonemes)
-                {
-                    var phonemeScore = new PhonemeScore
-                    {
-                        Phoneme = phoneme.Phoneme,
-                        AccuracyScore = phoneme.AccuracyScore,
-                        WordScoreId = wordScore.Id
-                    };
-                    _context.PhonemeScores.Add(phonemeScore);
-                }
-            }
-
-            await _context.SaveChangesAsync(cancellationToken);
-
-            return Unit.Value;
+            // No database saving for now, just return the JSON result
+            return jsonResult;
         }
     }
 }

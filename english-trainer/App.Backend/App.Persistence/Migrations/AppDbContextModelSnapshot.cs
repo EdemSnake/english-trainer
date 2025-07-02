@@ -36,10 +36,10 @@ namespace App.Persistence.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("NOW()");
 
-                    b.Property<float>("FluencyScore")
+                    b.Property<float>("CompletenessScore")
                         .HasColumnType("real");
 
-                    b.Property<float>("CompletenessScore")
+                    b.Property<float>("FluencyScore")
                         .HasColumnType("real");
 
                     b.Property<string>("FullResultJson")

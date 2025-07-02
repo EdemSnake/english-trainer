@@ -1,0 +1,38 @@
+.textToReadArea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.saveButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  margin-bottom: 1rem; /* Add some space below the button */
+
+  &:hover {
+    background-color: #218838;
+  }
+}
+
+.assessmentResult {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #eee;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
