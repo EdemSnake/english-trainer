@@ -1,6 +1,6 @@
 import { TextFetcher } from '@/features/TextFetcher';
 
-export const HomePage = () => {
+ const HomePage = () => {
   return (
     <div>
       <h1>Welcome to English Trainer!</h1>
@@ -9,3 +9,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;
