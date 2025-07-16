@@ -1,5 +1,8 @@
+
+git+https://github.com/hexgrad/kokoro.git
 fastapi
 uvicorn
-kokoro-tts
-pydub
 pydantic
+pika
+soundfile
+numpy

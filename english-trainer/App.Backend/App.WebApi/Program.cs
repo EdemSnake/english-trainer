@@ -3,6 +3,9 @@ using App.Application.Interfaces;
 using App.Persistence;
 using App.WebApi.Middleware;
 using Microsoft.EntityFrameworkCore;
+using MassTransit;
+using App.WebApi.Consumers;
+using App.WebApi.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,13 +22,37 @@ builder.Services.AddApplication();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
+// Add SignalR
+builder.Services.AddSignalR();
+
+// Add MassTransit with RabbitMQ
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<TtsResultConsumer>();
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        cfg.ReceiveEndpoint("tts_results", e =>
+        {
+            e.ConfigureConsumer<TtsResultConsumer>(context);
+        });
+    });
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
-        policy.AllowAnyOrigin();
+        policy.WithOrigins("http://localhost:5173") // Allow the frontend origin
+            .AllowCredentials(); // Allow credentials for SignalR
     });
 });
 
@@ -51,8 +78,12 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 app.UseCors("AllowAll");
 
+// Enable static files
+app.UseStaticFiles();
+
 // 4. Define a simple HTTP GET endpoint
 app.MapControllers();
+app.MapHub<TtsHub>("/ttsHub"); // Map the SignalR hub
 
 // 5. Start the web application
 app.Run();

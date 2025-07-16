@@ -13,12 +13,17 @@ This microservice provides text-to-speech functionality using Kokoro TTS.
     pip install -r requirements.txt
     ```
 
-2.  **Run the Application:**
+2.  **Run the API (Optional):**
     ```bash
     uvicorn app.main:app --reload
     ```
 
-### API Endpoints
+3.  **Run the Worker:**
+    ```bash
+    python worker.py
+    ```
+
+### API Endpoints (for direct access)
 
 *   `GET /voices`: Returns a list of available voices.
 *   `POST /speak`: Generates speech from text.

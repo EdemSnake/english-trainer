@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8000/speak
+Content-Type: application/json
+
+{
+  "text": "Hello, this is a test",
+  "voice": "af_heart"
+}
