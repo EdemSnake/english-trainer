@@ -1,6 +1,7 @@
 // features/PronunciationAssessment/components/TextToSpeech.tsx
 import React, { useState, useEffect } from 'react';
 import * as signalR from '@microsoft/signalr';
+import { SIGNALR_HUB_URL, TTS_SPEAK_API_URL, AUDIO_FILES_EXTERNAL_BASE_URL } from '../../../config';
 
 interface TextToSpeechProps {
     text: string;
@@ -8,36 +9,33 @@ interface TextToSpeechProps {
 
 export const TextToSpeech: React.FC<TextToSpeechProps> = ({ text }) => {
     const [audioUrl, setAudioUrl] = useState<string | null>(null);
-    const [connection, setConnection] = useState<signalR.HubConnection | null>(null);
+    //const [connection, setConnection] = useState<signalR.HubConnection | null>(null);
 
     useEffect(() => {
-        const newConnection = new signalR.HubConnectionBuilder()
-            .withUrl("http://localhost:5007/ttsHub") // Adjust the URL to your backend
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl(SIGNALR_HUB_URL) // Use imported variable
             .withAutomaticReconnect()
             .build();
+        connection.start()
+            .then(() => console.log('SignalR Connected.'))
+            .catch((err: any) => console.error('SignalR Connection Error: ', err));
 
-        setConnection(newConnection);
-    }, []);
-
-    useEffect(() => {
-        if (connection) {
-            connection.start()
-                .then(() => console.log('SignalR Connected.'))
-                .catch((err: any) => console.error('SignalR Connection Error: ', err));
-
-            connection.on("ReceiveAudioUrl", (url: string) => {
-                setAudioUrl(url);
-            });
-        }
+        connection.on("ReceiveAudioUrl", (url: string) => {
+            setAudioUrl(url);
+        });
 
         return () => {
-            connection?.stop();
-        };
-    }, [connection]);
+            connection.off("ReceiveAudioUrl", (url: string) => {
+                setAudioUrl(url);
+            });
+            connection.stop();
+        }
+    }, []);
+
 
     const handleSpeak = async () => {
         try {
-            await fetch('http://localhost:5007/api/tts/speak', {
+            await fetch(TTS_SPEAK_API_URL, { // Use imported variable
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -55,7 +53,7 @@ export const TextToSpeech: React.FC<TextToSpeechProps> = ({ text }) => {
                 Speak my text
             </button>
             {audioUrl && (
-                <audio controls src={`http://localhost:5007${audioUrl}`} autoPlay>
+                <audio controls src={`${AUDIO_FILES_EXTERNAL_BASE_URL}${audioUrl}`} autoPlay>
                     Your browser does not support the audio element.
                 </audio>
             )}

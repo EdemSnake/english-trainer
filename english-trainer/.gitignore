@@ -191,3 +191,6 @@ dmypy.json
 cython_debug/
 
 App.Backend.PyVenv/
+
+# ASP.NET Core configuration files
+appsettings.Development.json

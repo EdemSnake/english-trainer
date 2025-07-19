@@ -1,5 +1,3 @@
-
-git+https://github.com/hexgrad/kokoro.git
 fastapi
 uvicorn
 pydantic

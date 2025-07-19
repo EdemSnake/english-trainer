@@ -14,4 +14,4 @@ TMP_PATH = "/tmp"
 
 # The path where the final MP3 files will be stored.
 # This should be a publicly accessible directory in the .NET application.
-AUDIO_OUTPUT_PATH = "english-trainer/App.Backend/App.WebApi/wwwroot/audio"
+AUDIO_OUTPUT_PATH = "/app/audio"

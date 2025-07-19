@@ -1,0 +1,63 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: App.Backend/App.WebApi/Dockerfile
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: always
+    networks:
+      - app-network
+    environment:
+      - SpeechService__SubscriptionKey=YOUR_SUBSCRIPTION_KEY
+      - SpeechService__Region=YOUR_REGION
+
+  worker:
+    build:
+      context: ./App.Backend.Py
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    volumes:
+      - ./App.Backend/App.WebApi/wwwroot/audio:/app/audio
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./App.Frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  rabbitmq:
+    image: "rabbitmq:3-management-alpine"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=englishdb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app-network
+
+networks:
+  app-network:

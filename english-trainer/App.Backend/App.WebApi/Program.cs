@@ -32,7 +32,7 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost", "/", h =>
+        cfg.Host("rabbitmq", "/", h =>
         {
             h.Username("guest");
             h.Password("guest");
@@ -49,10 +49,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.AllowAnyHeader();
-        policy.AllowAnyMethod();
-        policy.WithOrigins("http://localhost:5173") // Allow the frontend origin
-            .AllowCredentials(); // Allow credentials for SignalR
+        policy.WithOrigins("http://localhost:3000") // Allow the frontend origin
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
     });
 });
 
@@ -84,6 +84,14 @@ app.UseStaticFiles();
 // 4. Define a simple HTTP GET endpoint
 app.MapControllers();
 app.MapHub<TtsHub>("/ttsHub"); // Map the SignalR hub
+
+// Accessing SpeechService configuration
+var speechServiceConfig = app.Configuration.GetSection("SpeechService");
+var subscriptionKey = speechServiceConfig["SubscriptionKey"];
+var region = speechServiceConfig["Region"];
+
+Console.WriteLine($"SpeechService SubscriptionKey: {subscriptionKey}");
+Console.WriteLine($"SpeechService Region: {region}");
 
 // 5. Start the web application
 app.Run();

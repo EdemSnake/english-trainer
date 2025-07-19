@@ -1,14 +1,33 @@
-# worker.py
-
+import os
 import pika
 import json
+import time
 from app.tts_engine import text_to_speech
+
+print("Worker script started")
 
 def main():
     """
     Connects to RabbitMQ and processes TTS requests.
     """
-    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    rabbitmq_host = os.environ.get('RABBITMQ_HOST', 'localhost')
+    connection = None
+    retries = 5
+    while retries > 0:
+        try:
+            print(f"Attempting to connect to RabbitMQ at {rabbitmq_host}...")
+            connection = pika.BlockingConnection(pika.ConnectionParameters(rabbitmq_host))
+            print("Successfully connected to RabbitMQ.")
+            break
+        except pika.exceptions.AMQPConnectionError as e:
+            print(f"Failed to connect to RabbitMQ: {e}. Retrying in 5 seconds...")
+            time.sleep(5)
+            retries -= 1
+    
+    if not connection:
+        print("Could not connect to RabbitMQ after multiple retries. Exiting.")
+        return
+
     channel = connection.channel()
 
     # Declare the exchange that MassTransit uses for the SpeakTextCommand

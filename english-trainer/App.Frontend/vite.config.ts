@@ -11,11 +11,19 @@ export default defineConfig({
     },
   },
   server: {
+    host: '0.0.0.0',
+    port: 3000,
     proxy: {
       '/api': {
-        target: 'https://localhost:7279',
+        target: 'http://backend:8080',
         changeOrigin: true,
-        secure: false, // Set to true if your backend uses a valid SSL certificate
+        secure: false,
+      },
+      '/ttsHub': {
+        target: 'http://backend:8080',
+        changeOrigin: true,
+        secure: false,
+        ws: true, // Enable WebSocket proxying for SignalR
       },
     },
   },
