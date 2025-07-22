@@ -2,6 +2,7 @@ import os
 import pika
 import json
 import time
+import requests
 from app.tts_engine import text_to_speech
 
 print("Worker script started")
@@ -62,34 +63,11 @@ def main():
                 'AudioUrl': audio_url
             }
             
-            # Get the correlation_id from the incoming message
-            correlation_id = properties.correlation_id
-
-            # Publish the result to the tts_results queue
-            channel.basic_publish(
-                exchange='',
-                routing_key='tts_results',
-                properties=pika.BasicProperties(
-                    correlation_id=correlation_id
-                ),
-                body=json.dumps(result)
-            )
-            if properties.reply_to:
-                channel.basic_publish(
-                    exchange='',
-                    routing_key=properties.reply_to,
-                    properties=pika.BasicProperties(
-                        correlation_id=correlation_id,
-                        content_type='application/json'
-                    ),
-                    body=json.dumps(result).encode()
-                )
-            else:
-                # fallback для логирования или fire-and-forget
-                print(" [!] reply_to отсутствует, сообщение не отправлено обратно")
-
-
-
+            try:
+                print(f": AudioUrl {result}")
+                requests.post("http://backend:8080/api/tts/send", json=result)
+            except Exception as e:
+                print(f"[!] Failed to POST to backend SignalR hub: {e}")
             
             print(f" [x] Sent result: {audio_url}")
 

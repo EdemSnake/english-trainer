@@ -21,7 +21,8 @@ export const TextToSpeech: React.FC<TextToSpeechProps> = ({ text }) => {
             .catch((err: any) => console.error('SignalR Connection Error: ', err));
 
         connection.on("ReceiveAudioUrl", (url: string) => {
-            setAudioUrl(url);
+            console.log(`http://localhost:8081${url}`,"url")
+            setAudioUrl(`http://localhost:8081${url}`);
         });
 
         return () => {
@@ -35,25 +36,28 @@ export const TextToSpeech: React.FC<TextToSpeechProps> = ({ text }) => {
 
     const handleSpeak = async () => {
         try {
-            await fetch(TTS_SPEAK_API_URL, { // Use imported variable
+         await fetch(TTS_SPEAK_API_URL, { // Use imported variable
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ text, voice: 'af_heart' }), // You can make the voice selectable
             });
+    
         } catch (error) {
             console.error('Error sending text to speak:', error);
         }
     };
 
+  
+ 
     return (
         <div>
             <button onClick={handleSpeak} disabled={!text}>
                 Speak my text
             </button>
             {audioUrl && (
-                <audio controls src={`${AUDIO_FILES_EXTERNAL_BASE_URL}${audioUrl}`} autoPlay>
+                <audio controls src={`${audioUrl}`} autoPlay>
                     Your browser does not support the audio element.
                 </audio>
             )}

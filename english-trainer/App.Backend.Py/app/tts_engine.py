@@ -1,20 +1,36 @@
-# app/tts_engine.py
 import os
 import uuid
-import tempfile
 import soundfile as sf
-# from kokoro import KPipeline # Temporarily commented out
-from .config import VOICES, AUDIO_OUTPUT_PATH
 import numpy as np
+from kokoro import KPipeline
+from .config import VOICES, AUDIO_OUTPUT_PATH
 
-# Инициализируем пайплайны один раз при запуске
-# pipelines = {
-#     voice["name"]: KPipeline(lang_code=voice["lang_code"], device="cpu")
-#     for voice in VOICES
-# }
+# Предзагрузка пайплайнов
+pipelines = {
+    voice["name"]: KPipeline(lang_code=voice["lang_code"], device="cpu")
+    for voice in VOICES
+}
 
 def text_to_speech(text: str, voice_name: str) -> str:
-    print(f"[TTS Engine] Generating dummy audio for text: {text} with voice: {voice_name}")
-    # Simulate audio generation
-    dummy_audio_url = f"http://example.com/audio/{uuid.uuid4()}.wav"
-    return dummy_audio_url
+    if voice_name not in pipelines:
+        raise ValueError(f"Voice '{voice_name}' not found")
+
+    pipeline = pipelines[voice_name]
+    generator = pipeline(text, voice=voice_name)
+
+    audio_segments = []
+    for _, _, audio in generator:
+        audio_segments.append(audio)
+
+    if not audio_segments:
+        raise RuntimeError("No audio generated")
+
+    # Склеиваем все сегменты
+    full_audio = np.concatenate(audio_segments)
+
+    # Сохраняем WAV
+    filename = f"{uuid.uuid4()}.wav"
+    path = os.path.join(AUDIO_OUTPUT_PATH, filename)
+    sf.write(path, full_audio, samplerate=24000)
+    print(f"[TTS Engine] Saved audio to: {path}")
+    return path

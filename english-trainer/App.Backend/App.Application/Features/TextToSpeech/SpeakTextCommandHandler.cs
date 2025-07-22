@@ -18,11 +18,13 @@ namespace App.Application.Features.TextToSpeech
         public async Task<Unit> Handle(SpeakTextCommand request, CancellationToken cancellationToken)
         {
             var endpoint = await _bus.GetSendEndpoint(new Uri("queue:tts_requests"));
-            await endpoint.Send(new
+            var message = new SpeakTextMessage
             {
-                request.Text,
-                request.Voice
-            }, cancellationToken);
+                Text = request.Text,
+                Voice = request.Voice
+            };
+
+            await endpoint.Send(message, cancellationToken);
 
             return Unit.Value;
         }

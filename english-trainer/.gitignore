@@ -194,3 +194,4 @@ App.Backend.PyVenv/
 
 # ASP.NET Core configuration files
 appsettings.Development.json
+/english-trainer/App.Backend.Py/app/audio/
