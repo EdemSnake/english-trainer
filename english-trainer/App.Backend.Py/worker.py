@@ -56,7 +56,14 @@ def main():
 
             print(f" [x] Received request for voice '{voice}': '{text}'")
             
-            audio_url = text_to_speech(text, voice)
+            # Generate audio file and get the file path
+            audio_file_path = text_to_speech(text, voice)
+            
+            # Extract just the filename from the full path
+            filename = os.path.basename(audio_file_path)
+            
+            # Create URL that points to .NET backend serving the audio
+            audio_url = f"http://localhost:8081/audio/{filename}"
             
             # Create the result with PascalCase to match the .NET consumer
             result = {

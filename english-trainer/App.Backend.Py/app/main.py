@@ -1,3 +1,5 @@
+from urllib.parse import urljoin
+
 # app/main.py
 import traceback
 import os
@@ -40,9 +42,10 @@ async def speak(request: SpeakRequest):
         relative_url = f"/audio/{filename}"
         print(f"[API] Относительная ссылка: {relative_url}")
 
-        # 3. Создание абсолютной ссылки для фронтенда (внешний URL!)
-        host = os.getenv("PUBLIC_BACKEND_URL", "http://localhost:8081")  # <-- добавь это в .env
-        full_url = f"{host}{relative_url}"
+        # 3. Создание абсолютной ссылки для фронтенда (через .NET backend)
+        # Audio files will be served by .NET backend which has access to shared volume
+        host = "http://localhost:8081"
+        full_url = f"{host}/audio/{filename}"
         print(f"[API] Абсолютная ссылка для клиента: {full_url}")
 
         # 4. Отправка через SignalR хаб

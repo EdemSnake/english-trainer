@@ -20,6 +20,8 @@ services:
   worker:
     build:
       context: ./App.Backend.Py
+    ports:
+      - "8082:8000"
     environment:
       - RABBITMQ_HOST=rabbitmq
     volumes:

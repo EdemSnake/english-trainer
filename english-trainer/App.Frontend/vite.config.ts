@@ -25,6 +25,11 @@ export default defineConfig({
         secure: false,
         ws: true, // Enable WebSocket proxying for SignalR
       },
+      '/app/audio': {
+        target: 'http://backend:8080',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });

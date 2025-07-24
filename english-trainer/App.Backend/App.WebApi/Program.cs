@@ -52,7 +52,8 @@ builder.Services.AddCors(options =>
         policy.WithOrigins("http://localhost:3000") // Allow the frontend origin
               .AllowAnyMethod()
               .AllowAnyHeader()
-              .AllowCredentials();
+              .AllowCredentials()
+              .WithExposedHeaders("Content-Length", "Content-Type"); // Expose headers for audio files
     });
 });
 
@@ -80,6 +81,15 @@ app.UseCors("AllowAll");
 
 // Enable static files
 app.UseStaticFiles();
+
+// Configure static file serving for audio files
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider("/app/audio"),
+    RequestPath = "/audio",
+    ServeUnknownFileTypes = true,
+    DefaultContentType = "application/octet-stream"
+});
 
 // 4. Define a simple HTTP GET endpoint
 app.MapControllers();

@@ -29,4 +29,10 @@ RUN dotnet publish "App.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Create audio directory and set permissions
+USER root
+RUN mkdir -p /app/audio && chown -R app:app /app/audio
+USER app
+
 ENTRYPOINT ["dotnet", "App.WebApi.dll"]
